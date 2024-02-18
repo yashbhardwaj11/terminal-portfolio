@@ -361,7 +361,7 @@ const App = () => {
             value={input}
             onChange={handleInputChange}
             onKeyPress={handleEnterPress}
-            className="bg-transparent border-none text-white p-2 outline-none flex-1 focus:outline-none text-sm md:text-lg"
+            className="bg-transparent border-none text-white p-2 outline-none flex-1 focus:outline-none text-sm md:text-lg "
           />
         </div>
       </div>
