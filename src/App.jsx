@@ -92,7 +92,7 @@ const App = () => {
           },
           {
             type: "response",
-            text: "---------------------------------------------------",
+            text: "------------------",
           },
           {
             type: "response",
@@ -317,12 +317,12 @@ const App = () => {
 
   return (
     <div
-      className="flex flex-col h-screen p-4 text-lg bg-aubergine-custom font-mono "
+      className="flex flex-col h-screen p-4 text-base md:text-lg bg-aubergine-custom font-mono"
       onClick={handleTerminalClick}
     >
       <div className="flex-1 overflow-y-auto  " ref={terminalRef}>
         {commands.map((cmd, index) => (
-          <div key={index} className="response">
+          <div key={index} className="response mb-1 md:mb-2">
             <div className="flex items-center">
               <span className="text-green-500">
                 {user.name || "visitor@yashbhardwaj.dev"} {" :~$ "}
@@ -332,7 +332,7 @@ const App = () => {
                   cmd.output && cmd.output[0].type === "response"
                     ? "text-white "
                     : "text-red-500"
-                }`}
+                } text-sm md:text-lg`}
               >
                 {cmd.command}
               </span>
@@ -341,7 +341,7 @@ const App = () => {
               cmd.output.map((item, innerIndex) => (
                 <div
                   key={innerIndex}
-                  className={`output-${item.type} text-white  text-lg`}
+                  className={`output-${item.type} text-white text-sm md:text-lg`}
                 >
                   <div className="flex items-center">
                     <span className="ml-2">{item.text}</span>
@@ -352,7 +352,7 @@ const App = () => {
         ))}
 
         <div className="flex items-center">
-          <span className="text-green-500 text-lg">
+          <span className="text-green-500 text-base md:text-lg">
             {user.name || "visitor@yashbhardwaj.dev"} {" :~$ "}
           </span>
           <input
@@ -361,7 +361,7 @@ const App = () => {
             value={input}
             onChange={handleInputChange}
             onKeyPress={handleEnterPress}
-            className="bg-transparent border-none text-white p-2 outline-none flex-1 focus:outline-none"
+            className="bg-transparent border-none text-white p-2 outline-none flex-1 focus:outline-none text-sm md:text-lg"
           />
         </div>
       </div>
